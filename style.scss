@@ -1,0 +1,127 @@
+:root {
+    --spacing: .1rem;
+    --spacing-menu: var(--spacing);
+    --color-default: white;
+    --font-size: larger;
+    --color-black: #1A1A1A;
+    --color-link: var(--color-default);
+    --pos-top: 100;
+    --pos-normal: 50;
+    --pos-back: 0;
+}
+
+
+/*
+generals
+*/
+
+span {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link)
+}
+
+a:hover {
+     :not(.no-anim) {
+        animation-name: pulse;
+        animation-duration: .5s;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0%,
+    100% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+    }
+}
+
+
+/*
+structure
+*/
+
+body {
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size);
+    background-image: url(img/bgfire.png);
+    background-size: cover;
+    color: var(--color-default);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;
+    letter-spacing: var(--spacing-menu);
+    box-sizing: border-box;
+}
+
+header {
+    z-index: var(--pos-top);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 7%;
+    width: 100%;
+    .logo {
+        align-self: flex-start;
+        margin-left: 10%;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        margin-right: 10%;
+        div {
+            margin: 0 1vw;
+        }
+        .social {
+            i:not(.fa-pipe) {
+                margin: 0 .2vw;
+            }
+        }
+    }
+}
+
+#content {
+    z-index: var(--pos-normal);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    div {
+        margin: 2% 0;
+        z-index: var(--pos-normal);
+    }
+    .torch {
+        position: absolute;
+        z-index: var(--pos-back);
+        bottom: -15%;
+        right: -15%;
+    }
+}
+
+footer {
+    z-index: var(--pos-top);
+    padding: 1vh 0;
+    width: 100%;
+    position: inherit;
+    /*position: absolute;
+    bottom: 0;*/
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-black);
+    opacity: .8;
+}
