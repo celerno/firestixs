@@ -5,6 +5,7 @@
   --font-size: larger;
   --color-black: #1A1A1A;
   --color-link: var(--color-default);
+  --color-yellow: #FDF035;
   --pos-top: 100;
   --pos-normal: 50;
   --pos-back: 0;
@@ -53,7 +54,6 @@ body {
 
 section {
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,9 +122,18 @@ footer {
   /*position: absolute;
   bottom: 0;*/
   display: flex;
-  justify-content: center;
+  background-color: var(--color-black);
+  justify-content: space-around;
+  flex-direction: row;
+}
+footer .menu {
+  display: flex;
+  flex-direction: row;
 }
 
+#about {
+  justify-content: start;
+}
 #about div {
   width: 100%;
 }
@@ -143,11 +152,11 @@ footer {
 }
 #about .yellow {
   color: var(--color-black);
-  background-color: yellow;
+  background-color: var(--color-yellow);
   margin: 0;
   flex-direction: row;
   display: flex;
-  height: 85vh;
+  height: 65vh;
   justify-content: center;
 }
 #about .yellow > div {
@@ -167,25 +176,47 @@ footer {
   width: 80%;
   margin-top: -4rem;
 }
-#about footer {
-  background-color: var(--color-black);
-  display: flex;
-  justify-content: start;
-  flex-direction: row;
-  align-items: flex-start;
+
+#shop {
+  background-color: white;
+  background-image: none;
 }
-#about footer div {
-  width: unset;
-  padding: 0 10rem;
+#shop img {
+  margin-top: 15vh;
+  margin-bottom: 7.5vh;
 }
-#about footer div:last-child {
-  align-items: flex-end;
-  text-align: right;
-  display: flex;
-  flex-direction: row;
+
+#news {
+  background-image: url(img/bgnews.png);
+  text-align: center;
+  color: var(--color-black);
+  padding-top: 10vh;
 }
-#about footer div:last-child > div {
+#news > div {
+  height: 34vh;
   width: 100%;
+  justify-content: center;
+  display: flex;
+}
+#news > div form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 66%;
+}
+#news > div form div input {
+  border: none;
+  padding: 0;
+  font-family: var(--font-family);
+  width: 50%;
+  font-size: large;
+  border: none;
+  padding: 10px;
+  box-sizing: inherit;
+}
+#news > div form div input[type=button] {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,6 +5,7 @@
     --font-size: larger;
     --color-black: #1A1A1A;
     --color-link: var(--color-default);
+    --color-yellow: #FDF035;
     --pos-top: 100;
     --pos-normal: 50;
     --pos-back: 0;
@@ -61,7 +62,6 @@ body {
 
 section {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -132,10 +132,17 @@ footer {
     /*position: absolute;
     bottom: 0;*/
     display: flex;
-    justify-content: center;
+    background-color: var(--color-black);
+    justify-content: space-around;
+    flex-direction: row;
+    .menu {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 #about {
+    justify-content: start;
     div {
         width: 100%;
     }
@@ -154,11 +161,11 @@ footer {
     }
     .yellow {
         color: var(--color-black);
-        background-color: yellow;
+        background-color: var(--color-yellow);
         margin: 0;
         flex-direction: row;
         display: flex;
-        height: 85vh;
+        height: 65vh;
         justify-content: center;
         >div {
             text-align: center;
@@ -178,24 +185,48 @@ footer {
             margin-top: -4rem
         }
     }
-    footer {
-        background-color: var(--color-black);
-        div {
-            width: unset;
-            padding: 0 10rem;
-        }
-        div:last-child {
-            align-items: flex-end;
-            text-align: right;
+}
+
+#shop {
+    background-color: white;
+    background-image: none;
+    img {
+        margin-top: 15vh;
+        margin-bottom: 7.5vh;
+    }
+}
+
+#news {
+    background-image: url(img/bgnews.png);
+    text-align: center;
+    color: var(--color-black);
+    padding-top: 10vh;
+    >div {
+        height: 34vh;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        form {
             display: flex;
-            flex-direction: row;
-            >div {
-                width: 100%;
+            justify-content: center;
+            flex-direction: column;
+            width: 66%;
+            div {
+                input {
+                    border: none;
+                    padding: 0;
+                    font-family: var(--font-family);
+                    width: 50%;
+                    font-size: large;
+                    border: none;
+                    padding: 10px;
+                    box-sizing: inherit;
+                }
+                input[type=button] {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
             }
         }
-        display: flex;
-        justify-content: start;
-        flex-direction: row;
-        align-items: flex-start;
     }
 }
