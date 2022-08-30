@@ -90,6 +90,7 @@ header {
         flex-direction: row;
         font-weight: var(--font-bold);
         margin-right: 10%;
+        transform: scale(.8);
         div {
             margin: 0 1vw;
         }
@@ -229,4 +230,30 @@ footer {
             }
         }
     }
+}
+
+#Contact {
+    width: 100%;
+    color: var(--color-default);
+    tr {
+        margin-bottom: 20px;
+    }
+    td {
+        padding: 0 20px;
+        border-right: solid 2px var(--color-default);
+    }
+    td:last-of-type {
+        font-weight: bold;
+        border: 0;
+    }
+}
+
+.shopnow {
+    font-size: larger;
+    padding: 12px;
+    border-radius: 24px;
+    background-color: black;
+    color: var(--color-yellow);
+    cursor: pointer;
+    font-weight: 700;
 }

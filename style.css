@@ -83,6 +83,7 @@ header .menu {
   flex-direction: row;
   font-weight: var(--font-bold);
   margin-right: 10%;
+  transform: scale(0.8);
 }
 header .menu div {
   margin: 0 1vw;
@@ -217,6 +218,32 @@ footer .menu {
 #news > div form div input[type=button] {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+#Contact {
+  width: 100%;
+  color: var(--color-default);
+}
+#Contact tr {
+  margin-bottom: 20px;
+}
+#Contact td {
+  padding: 0 20px;
+  border-right: solid 2px var(--color-default);
+}
+#Contact td:last-of-type {
+  font-weight: bold;
+  border: 0;
+}
+
+.shopnow {
+  font-size: larger;
+  padding: 12px;
+  border-radius: 24px;
+  background-color: black;
+  color: var(--color-yellow);
+  cursor: pointer;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */
