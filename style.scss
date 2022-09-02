@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+
+/*
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+*/
+
+$screen-sm-max: 480px;
+$screen-md-max: 768px;
+$screen-dt-min: 769px;
 :root {
     --spacing: .1rem;
     --spacing-menu: var(--spacing);
@@ -9,9 +22,15 @@
     --pos-top: 100;
     --pos-normal: 50;
     --pos-back: 0;
-    --font-family: montserrat, sans-serif;
+    --font-family: Montserrat, sans-serif;
     --font-normal: 400;
     --font-bold: 700;
+    --font-extrabold: 900;
+}
+
+#home {
+    height: 100vh;
+    @media screen and (max-width: $screen-md-max) {}
 }
 
 
@@ -21,6 +40,16 @@ generals
 
 span {
     display: inline-block;
+}
+
+h1 {
+    font-weight: var(--font-extrabold);
+    font-size: xx-large;
+    margin-block: .5rem;
+}
+
+h3 {
+    margin-block-end: 0;
 }
 
 a {
@@ -72,6 +101,9 @@ section {
     color: var(--color-default);
     letter-spacing: var(--spacing-menu);
     box-sizing: border-box;
+    @media screen and (max-width: $screen-md-max) {
+        align-items: unset;
+    }
 }
 
 header {
@@ -81,6 +113,11 @@ header {
     justify-content: space-between;
     padding-top: 7%;
     width: 100%;
+    @media screen and (max-width: $screen-md-max) {
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+    }
     .logo {
         align-self: flex-start;
         margin-left: 10%;
@@ -93,6 +130,17 @@ header {
         transform: scale(.8);
         div {
             margin: 0 1vw;
+        }
+        @media screen and (max-width: $screen-md-max) {
+            transform: unset;
+            >div:not(.social) {
+                display: none;
+            }
+            .social {
+                position: fixed;
+                top: 0;
+                right: 0;
+            }
         }
     }
 }
@@ -108,6 +156,12 @@ header {
     align-items: center;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: $screen-md-max) {
+        picture, img {
+            width: 94%;
+        }
+        text-align: center;
+    }
     >div {
         margin: 2% 0;
         z-index: var(--pos-normal);
@@ -117,6 +171,9 @@ header {
         z-index: var(--pos-back);
         bottom: -15%;
         right: -15%;
+        @media screen and (max-width: $screen-md-max) {
+            display: none;
+        }
     }
 }
 
@@ -130,15 +187,25 @@ footer {
     padding: 1vh 0;
     width: 100%;
     position: inherit;
-    /*position: absolute;
-    bottom: 0;*/
     display: flex;
     background-color: var(--color-black);
     justify-content: space-around;
     flex-direction: row;
+    @media screen and (max-width: $screen-md-max) {
+        text-align: center;
+        flex-direction: column;
+        .social {
+            display: none;
+        }
+    }
     .menu {
         display: flex;
         flex-direction: row;
+        @media screen and (max-width: $screen-md-max) {
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+        }
     }
 }
 
@@ -154,10 +221,25 @@ footer {
         margin: 0;
         display: flex;
         height: 15vh;
+        @media screen and (max-width: $screen-md-max) {
+            height: auto;
+            text-align: center;
+            padding-top: 4rem;
+        }
         align-items: flex-end;
+        picture,
+        img {
+            width: 40%;
+            @media screen and (max-width: $screen-md-max) {
+                width: 94%;
+            }
+        }
         >div:last-child {
             padding-right: 10%;
             z-index: 9000;
+            @media screen and (max-width: $screen-md-max) {
+                padding: 0;
+            }
         }
     }
     .yellow {
@@ -168,22 +250,35 @@ footer {
         display: flex;
         height: 65vh;
         justify-content: center;
+        @media screen and (max-width: $screen-md-max) {
+            flex-direction: column;
+            height: auto;
+        }
         >div {
             text-align: center;
             overflow-y: visible;
             width: 40%;
+            @media screen and (max-width: $screen-md-max) {
+                width: 100%;
+                height: auto;
+            }
         }
         li {
+            /*transform: scale(.7);*/
             text-align: left;
             list-style-image: url(img/dot.png);
             opacity: .9;
-            margin: 2rem 0;
+            margin: 1rem 0;
             font-weight: var(--font-bold);
         }
         video {
             z-index: 9000;
             width: 80%;
-            margin-top: -4rem
+            margin-top: -4rem;
+            @media screen and (max-width: $screen-md-max) {
+                margin: 0;
+                width: 100%;
+            }
         }
     }
 }
@@ -191,9 +286,11 @@ footer {
 #shop {
     background-color: white;
     background-image: none;
+    text-align: center;
     img {
         margin-top: 15vh;
         margin-bottom: 7.5vh;
+        width: 90%;
     }
 }
 
@@ -201,9 +298,8 @@ footer {
     background-image: url(img/bgnews.png);
     text-align: center;
     color: var(--color-black);
-    padding-top: 10vh;
     >div {
-        height: 34vh;
+        height: 50vh;
         width: 100%;
         justify-content: center;
         display: flex;
@@ -212,7 +308,11 @@ footer {
             justify-content: center;
             flex-direction: column;
             width: 66%;
+            @media screen and (max-width: $screen-md-max) {
+                width: 100%;
+            }
             div {
+                margin-bottom: 1rem;
                 input {
                     border: none;
                     padding: 0;
@@ -223,8 +323,12 @@ footer {
                     padding: 10px;
                     box-sizing: inherit;
                 }
+                input[type=email]::placeholder {
+                    text-align: center;
+                }
                 input[type=button] {
-                    font-weight: bold;
+                    font-weight: var(--font-extrabold);
+                    font-size: larger;
                     text-transform: uppercase;
                 }
             }
@@ -246,6 +350,22 @@ footer {
         font-weight: bold;
         border: 0;
     }
+    @media screen and (max-width: $screen-md-max) {
+        width: 100%;
+        table,
+        tbody,
+        tr,
+        td {
+            display: block;
+            border: none;
+            text-align: center;
+            padding: 0%;
+            width: 100%;
+        }
+        tr {
+            margin: 1rem 0;
+        }
+    }
 }
 
 .shopnow {
@@ -255,5 +375,5 @@ footer {
     background-color: black;
     color: var(--color-yellow);
     cursor: pointer;
-    font-weight: 700;
+    font-weight: var(--font-extrabold);
 }
