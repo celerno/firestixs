@@ -28,11 +28,6 @@ $screen-dt-min: 769px;
     --font-extrabold: 900;
 }
 
-#home {
-    height: 100vh;
-    @media screen and (max-width: $screen-md-max) {}
-}
-
 
 /*
 generals
@@ -93,17 +88,14 @@ section {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     font-size: var(--font-size);
-    background-image: url(img/bgfire.png);
     background-size: cover;
+    overflow-x: hidden;
     color: var(--color-default);
     letter-spacing: var(--spacing-menu);
     box-sizing: border-box;
-    @media screen and (max-width: $screen-md-max) {
-        align-items: unset;
-    }
+    @media screen and (max-width: $screen-md-max) {}
 }
 
 header {
@@ -111,16 +103,14 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 7%;
+    padding-top: 4rem;
     width: 100%;
     @media screen and (max-width: $screen-md-max) {
-        flex-direction: column;
-        padding: 0;
         justify-content: center;
     }
     .logo {
         align-self: flex-start;
-        margin-left: 10%;
+        height: 15vh;
     }
     .menu {
         display: flex;
@@ -138,8 +128,9 @@ header {
             }
             .social {
                 position: fixed;
-                top: 0;
-                right: 0;
+                top: 2rem;
+                max-width: 30vw;
+                right: 15vw;
             }
         }
     }
@@ -151,26 +142,62 @@ header {
     }
 }
 
+#home {
+    height: 100vh;
+    background-image: url(img/bgfire.png);
+    padding-left: 10vw;
+    @media screen and (max-width: $screen-md-max) {
+        justify-content: normal;
+        padding-left: unset;
+        background-image: url(img/bgfire_m.png);
+        background-repeat: no-repeat;
+    }
+}
+
 #content {
     z-index: var(--pos-normal);
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
+    width: 100%;
     @media screen and (max-width: $screen-md-max) {
-        picture, img {
+        padding-left: 0;
+        picture,
+        img {
             width: 94%;
         }
         text-align: center;
     }
-    >div {
-        margin: 2% 0;
+    >div:first-of-type {
+        margin-top: 10%;
         z-index: var(--pos-normal);
+        width: 20vw;
+        img {
+            width: 100%;
+        }
+        @media screen and (max-width: $screen-md-max) {
+            width: unset;
+            transform: scale(.7);
+        }
+    }
+    .slogan {
+        width: 30vw;
+        img {
+            width: 85%;
+        }
+        @media screen and (max-width: $screen-md-max) {
+            width: unset;
+        }
     }
     .torch {
+        img {
+            width: 100%;
+        }
         position: absolute;
         z-index: var(--pos-back);
-        bottom: -15%;
-        right: -15%;
+        width: 30vw;
+        bottom: -5vh;
+        right: -15vw;
         @media screen and (max-width: $screen-md-max) {
             display: none;
         }

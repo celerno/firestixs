@@ -36,20 +36,17 @@
         <div id="content">
             <div>
                 <picture>
-                    <img style="max-width:600px" src="img/slogan.png" />
+                    <img style="max-width:600px" src="img/icons.png" />
                 </picture>
             </div>
-            <div>
-                <picture>
-                    <img src="img/icons.png" alt="" srcset="">
-                </picture>
-            </div>
-            <div>
-                <a href="#shop">
-                    <input class="shopnow" type="button" value="OUR PRODUCT" /></span>
+            <div class="slogan">
+                <a href="#about">
+                    <picture>
+                        <img src="img/slogan.png" alt="" srcset="">
+                    </picture>
                 </a>
             </div>
-            <div>
+            <div style="display:none;">
                 <picture>
                     <img src="img/madewith.png" alt="" srcset="">
                 </picture>
@@ -61,14 +58,10 @@
             </div>
             <div></div>
             <div></div>
-            <div></div>
         </div>
-        <footer class="bg-black">
+        <footer style="display: none;" class="bg-black">
             <a href="#about">
                 <div>
-                    <picture>
-                        <img src="img/scrolldown.png">
-                    </picture>
                 </div>
             </a>
         </footer>
@@ -91,11 +84,11 @@
             <div>
                 <div>
                     <ul>
-                        <li>Replaces kindling and is a little bundle of Firewood.</li>
-                        <li>Unique all natural fire starter (Pine wood, a candle wick and paraffin wax). No harmful chemicals, easy to light.</li>
-                        <li>Quickly ignites outdoor camp fires, charcoal and outdoor bbq’s, fireplaces, outdoor pizza ovens, wood and pellet stoves.</li>
-                        <li>Convenient to take camping, hiking, ATV trips, snowmobiling, fishing, hunting or at home for indoor fireplace or backyard bonfires.</li>
-                        <li>Just light the 2 ends of the candle wicks, place dry wood on top and watch your fire burn!</li>
+
+                        <li style=font-size:small>Unique all natural fire starter (Pine wood, a candle wick and paraffin wax). No harmful chemicals, easy to light.</li>
+                        <li style=font-size:small>Quickly ignites outdoor camp fires, charcoal and outdoor bbq’s, fireplaces, outdoor pizza ovens, wood and pellet stoves.</li>
+                        <li style=font-size:small>Convenient to take camping, hiking, ATV trips, snowmobiling, fishing, hunting or at home for indoor fireplace or backyard bonfires.</li>
+                        <li style=font-size:x-large>Just light the 2 ends of the candle wicks, place dry wood on top and watch your fire burn!</li>
 
                     </ul>
                 </div>
@@ -110,15 +103,15 @@
     </section>
     <section id="news">
         <div>
-            <form>
+            <form id="suscribe" action="#" method="get">
                 <h3>New news & offers in your inbox</h3>
                 <h1>
                     Join our newsletter
                 </h1>
                 <div>
-                    <input type="email" name="email" placeholder="Enter your email address..." id="">
+                    <input id="email" type="email" name="email" placeholder="Enter your email address...">
                 </div>
-                <div><input type="button" value="subscribe"></div>
+                <div><input type="button" value="subscribe" onclick="chgAction()"></div>
             </form>
         </div>
     </section>
@@ -127,7 +120,7 @@
             <div>
                 <a href="#">
                     <picture>
-                        <img src="img/logo.png" alt="FireStix logo">
+                        <img src="img/logo_02.png" alt="FireStix logo">
                     </picture>
                 </a>
             </div>
@@ -169,6 +162,14 @@
         </div>
 
     </footer>
+    <script type="text/javascript">
+        function chgAction() {
+            const action = 'https://docs.google.com/forms/d/e/1FAIpQLSeen86KS5s1bpAal5MYzzn0DA09Xj884H1eDIOUk5RPlANuIQ/viewform?entry.1601924739=';
+            var form = document.getElementById('suscribe');
+            var email = document.getElementById('email');
+            window.location.href = action + email.value;
+        }
+    </script>
 </body>
 
 </html>

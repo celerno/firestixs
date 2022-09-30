@@ -24,9 +24,6 @@
   --font-extrabold: 900;
 }
 
-#home {
-  height: 100vh;
-}
 /*
 generals
 */
@@ -79,39 +76,30 @@ section {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   font-size: var(--font-size);
-  background-image: url(img/bgfire.png);
   background-size: cover;
+  overflow-x: hidden;
   color: var(--color-default);
   letter-spacing: var(--spacing-menu);
   box-sizing: border-box;
 }
-@media screen and (max-width: 768px) {
-  section {
-    align-items: unset;
-  }
-}
-
 header {
   z-index: var(--pos-top);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 7%;
+  padding-top: 4rem;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   header {
-    flex-direction: column;
-    padding: 0;
     justify-content: center;
   }
 }
 header .logo {
   align-self: flex-start;
-  margin-left: 10%;
+  height: 15vh;
 }
 header .menu {
   display: flex;
@@ -132,8 +120,9 @@ header .menu div {
   }
   header .menu .social {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 2rem;
+    max-width: 30vw;
+    right: 15vw;
   }
 }
 
@@ -141,29 +130,71 @@ header .menu div {
   margin: 0 0.2vw;
 }
 
+#home {
+  height: 100vh;
+  background-image: url(img/bgfire.png);
+  padding-left: 10vw;
+}
+@media screen and (max-width: 768px) {
+  #home {
+    justify-content: normal;
+    padding-left: unset;
+    background-image: url(img/bgfire_m.png);
+    background-repeat: no-repeat;
+  }
+}
+
 #content {
   z-index: var(--pos-normal);
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   #content {
+    padding-left: 0;
     text-align: center;
   }
-  #content picture, #content img {
+  #content picture,
+#content img {
     width: 94%;
   }
 }
-#content > div {
-  margin: 2% 0;
+#content > div:first-of-type {
+  margin-top: 10%;
   z-index: var(--pos-normal);
+  width: 20vw;
+}
+#content > div:first-of-type img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #content > div:first-of-type {
+    width: unset;
+    transform: scale(0.7);
+  }
+}
+#content .slogan {
+  width: 30vw;
+}
+#content .slogan img {
+  width: 85%;
+}
+@media screen and (max-width: 768px) {
+  #content .slogan {
+    width: unset;
+  }
 }
 #content .torch {
   position: absolute;
   z-index: var(--pos-back);
-  bottom: -15%;
-  right: -15%;
+  width: 30vw;
+  bottom: -5vh;
+  right: -15vw;
+}
+#content .torch img {
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   #content .torch {
