@@ -79,7 +79,7 @@ body {
     margin: 0;
     min-width: 100%;
     min-height: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     font-family: var(--font-family);
     scroll-behavior: smooth;
 }
@@ -91,7 +91,6 @@ section {
     align-items: center;
     font-size: var(--font-size);
     background-size: cover;
-    overflow-x: hidden;
     color: var(--color-default);
     letter-spacing: var(--spacing-menu);
     box-sizing: border-box;
@@ -145,12 +144,82 @@ header {
 #home {
     height: 100vh;
     background-image: url(img/bgfire.png);
-    padding-left: 10vw;
+    padding: 0 10vw;
+    position: relative;
+    overflow-x: hidden;
     @media screen and (max-width: $screen-md-max) {
         justify-content: normal;
         padding-left: unset;
         background-image: url(img/bgfire_m.png);
         background-repeat: no-repeat;
+    }
+}
+
+#moreaboutus {
+    background-image: url(img/bg_test.png);
+    .top-yellow {
+        height: 2vh;
+        background-color: #FDF035;
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+    .testimonial-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        position: relative;
+        top: -3vh;
+        @media screen and (max-width: $screen-md-max) {
+            top: unset;
+        }
+        .testimonial {
+            width: 375px;
+            position: relative;
+            color: #1A1A1A;
+            font-size: small;
+            margin-right: 5%;
+            img {
+                width: 100%;
+            }
+            .quote {
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                position: absolute;
+                top: 40px;
+                text-indent: 50px;
+                padding: 20px 20px 20px 40px;
+            }
+            .author {
+                position: absolute;
+                top: 170px;
+                right: 35px;
+                font-weight: bold;
+            }
+            .f-small {
+                font-size: small;
+            }
+        }
+    }
+    #FAQ {
+        max-width: 80vw;
+        @media screen and (max-width: $screen-md-max) {
+            max-width: unset;
+        }
+        >div:first-of-type {
+            margin: 1rem;
+            font-size: x-large;
+        }
+        >div:last-of-type {
+            background-color: #FDF035;
+            color: #1A1A1A;
+            padding: 2rem 2rem 2rem 2rem;
+            font-weight: 500;
+            strong {
+                font-weight: 900;
+                font-size: xx-large;
+            }
+        }
     }
 }
 
@@ -198,6 +267,7 @@ header {
         width: 30vw;
         bottom: -5vh;
         right: -15vw;
+        overflow-x: hidden;
         @media screen and (max-width: $screen-md-max) {
             display: none;
         }
