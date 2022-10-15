@@ -359,7 +359,6 @@ footer .menu {
   margin: 0;
   flex-direction: row;
   display: flex;
-  height: 65vh;
   justify-content: center;
 }
 @media screen and (max-width: 768px) {
