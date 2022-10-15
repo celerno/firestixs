@@ -209,7 +209,7 @@ header .menu div {
 #moreaboutus #FAQ > div:last-of-type {
   background-color: #FDF035;
   color: #1A1A1A;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 4rem;
   font-weight: 500;
 }
 #moreaboutus #FAQ > div:last-of-type strong {
