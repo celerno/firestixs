@@ -282,9 +282,10 @@ header .menu div {
   opacity: 0.8;
 }
 
-footer {
+footer > div {
   z-index: var(--pos-top);
-  padding: 1vh 0;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   width: 100%;
   position: inherit;
   display: flex;
@@ -292,21 +293,24 @@ footer {
   justify-content: space-around;
   flex-direction: row;
 }
+footer > div span {
+  color: var(--color-default);
+}
 @media screen and (max-width: 768px) {
-  footer {
+  footer > div {
     text-align: center;
     flex-direction: column;
   }
-  footer .social {
+  footer > div .social {
     display: none;
   }
 }
-footer .menu {
+footer > div .menu {
   display: flex;
   flex-direction: row;
 }
 @media screen and (max-width: 768px) {
-  footer .menu {
+  footer > div .menu {
     flex-direction: column;
     height: auto;
     width: 100%;

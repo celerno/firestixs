@@ -281,8 +281,14 @@ header {
 }
 
 footer {
+    >div{
+        span{
+            color:var(--color-default);
+        }
     z-index: var(--pos-top);
-    padding: 1vh 0;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+
     width: 100%;
     position: inherit;
     display: flex;
@@ -305,6 +311,8 @@ footer {
             width: 100%;
         }
     }
+}
+
 }
 
 #about {
