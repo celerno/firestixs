@@ -194,26 +194,26 @@ header .menu div {
 #moreaboutus .testimonial-list .testimonial .f-small {
   font-size: small;
 }
-#moreaboutus #FAQ {
+#moreaboutus #Story {
   max-width: 80vw;
 }
 @media screen and (max-width: 768px) {
-  #moreaboutus #FAQ {
+  #moreaboutus #Story {
     max-width: unset;
   }
 }
-#moreaboutus #FAQ > div:first-of-type {
+#moreaboutus #Story > div:first-of-type {
   margin: 1rem;
   font-size: x-large;
 }
-#moreaboutus #FAQ > div:last-of-type {
+#moreaboutus #Story > div:last-of-type {
   background-color: #FDF035;
   color: #1A1A1A;
   padding: 4rem;
   font-size: medium;
   font-weight: 500;
 }
-#moreaboutus #FAQ > div:last-of-type strong {
+#moreaboutus #Story > div:last-of-type strong {
   font-weight: 900;
   font-size: xx-large;
 }
@@ -231,7 +231,7 @@ header .menu div {
     text-align: center;
   }
   #content picture,
-#content img {
+  #content img {
     width: 94%;
   }
 }
@@ -345,7 +345,7 @@ footer > div .menu {
 }
 @media screen and (max-width: 768px) {
   #about .top picture,
-#about .top img {
+  #about .top img {
     width: 94%;
   }
 }
@@ -407,11 +407,25 @@ footer > div .menu {
   background-color: white;
   background-image: none;
   text-align: center;
+  flex-direction: row;
+  align-items: baseline;
+  padding-bottom: 4vh;
+  justify-content: center;
+}
+#shop > div {
+  margin: 2vh;
 }
 #shop img {
   margin-top: 5vh;
   margin-bottom: 5vh;
   width: 90%;
+}
+@media screen and (max-width: 768px) {
+  #shop {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 #news {
@@ -478,9 +492,9 @@ footer > div .menu {
     width: 100%;
   }
   #Contact table,
-#Contact tbody,
-#Contact tr,
-#Contact td {
+  #Contact tbody,
+  #Contact tr,
+  #Contact td {
     display: block;
     border: none;
     text-align: center;

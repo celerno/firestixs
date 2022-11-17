@@ -201,7 +201,7 @@ header {
             }
         }
     }
-    #FAQ {
+    #Story {
         max-width: 80vw;
         @media screen and (max-width: $screen-md-max) {
             max-width: unset;
@@ -392,11 +392,25 @@ footer {
     background-color: white;
     background-image: none;
     text-align: center;
+    flex-direction: row;
+    align-items: baseline;
+    padding-bottom: 4vh;
+    justify-content: center;
+    >div{
+        margin: 2vh;
+    }
     img {
         margin-top: 5vh;
         margin-bottom: 5vh;
         width: 90%;
     }
+    @media screen and (max-width: $screen-md-max) {
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       
+    }
+
 }
 
 #news {
